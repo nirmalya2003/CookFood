@@ -1,50 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recipe Management & Meal Planning</title>
-    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://kit.fontawesome.com/80a8af315d.js" crossorigin="anonymous"></script>
+    <title>Recipe Explore</title>
 </head>
+
 <body>
     <header>
-        <div class="container">
-            <h1>CookFood</h1>
-            <nav>
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">Review</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Sign Up</a></li>
-                    <li><a href="#">Sign In</a></li>
-                </ul>
-            </nav>
-        </div>
+        <nav>
+            <h1>Explore Recipe</h1>
+            <form name="inputForm">
+                <input type="text" id="searchBox" placeholder="Type the main ingredient..." class="searcBox" />
+                <button type="submit" class="searchBtn">Search</button>
+            </form>
+        </nav>
     </header>
+    <main>
+        <section>
+            <div class="recipe-container">
+                <h2>Find your favourite recipes by the main ingredient...</h2>
+            </div>
+            <div class="quote1">
+                <blockquote>Real food doesn't have ingredients, real food is ingredients.<br />
+                    <cite>- Jamie Oliver</cite>
+                </blockquote>
+            </div>
+            <div class="quote2">
+                <blockquote>Food is not rational. Food is culture, habit, craving, and identity.<br />
+                    <cite>- Jonathan Safran Foer</cite>
+                </blockquote>
+            </div>
+            <div class="recipe-details">
+                <button type="button" class="recipe-close-btn">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+                <div class="recipe-details-content"></div>
+            </div>
+        </section>
+    </main>
 
-    <section class="hero">
-        <div class="container">
-            <h2>Welcome to Your Cook & Food Buddy!</h2>
-            <p>Discover delicious recipes, plan your meals, and eat healthier with our all-in-one platform.</p>
-            <a href="#" class="btn btn-primary">Get Started</a>
-        </div>
-    </section>
-
-    <section class="hero">
-        <div class="container">
-            <h2>Curated Recipe Collection</h2>
-            <p>Discover delicious recipes, plan your meals, and eat healthier with our all-in-one platform.</p>
-            <a href="#" class="btn btn-primary">Explore</a>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 Recipe Management & Meal Planning</p>
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Contact Us</a></li>
-        </div>
-    </footer>
+    <script src="script.js"></script>
 </body>
+
 </html>
