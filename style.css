@@ -1,253 +1,480 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
-    background-color: #bef0d1;
-    color: #000000;
+    height: 100%;
 }
 
-header nav {
-    background-color: rgb(36, 189, 102);
-    padding: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 1;
-}
-
-header nav h1 {
-    font-size: 26px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-}
-
-header nav form {
-    display: flex;
-    justify-content: center;
-}
-
-form input[type="text"] {
-    flex-grow: 1;
-    margin-right: 10px;
-}
-
-form input[type="text"], button[type="submit"] {
-    border: none;
-    font-size: 18px;
-    padding: 10px;
-    border-radius: 4px;
-}
-
-form button[type="submit"] {
-    background-color: #f44336;
-    color: #fff;
-    cursor: pointer;
-    transition: background-color 0.3s ease-in-out;
-}
-
-form button[type="submit"]:hover, .recipe button:hover, .recipe-close-btn:hover, .recipeVid a:hover {
-    background-color: #ff5c5c;
-}
-
-/* Main section */
-.recipe-container {
-    text-align: center;
-    margin-top: 20px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    grid-gap: 40px;
-    width: 80%;
-    margin: 10px auto;
-    padding: 20px;
-    place-items: center;
-}
-
-.quote1, .quote2 {
-    text-align: center;
-    margin-top: 30px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    grid-gap: 40px;
-    width: 80%;
-    margin: 10px auto;
-    padding: 30px;
-    place-items: center;
-}
-
-.recipe {
-    background-color: #fff;
-    display: flex;
-    flex-direction: column;
-    color: #000;
-    border-radius: 6px;
-    box-shadow: 0 5px 10px rgba(214, 25, 25, 0.5), -5px -5px 10px rgba(79, 233, 32, 0.678),  -5px 5px 10px rgba(47, 166, 235, 0.5),  5px -5px 10px rgba(243, 28, 225, 0.5);
-    cursor: pointer;
-    max-width: 350px;
-    transition: transform 0.3s ease-in-out;
-}
-
-.recipe:hover {
-    transform: scale(1.04);
-}
-
-.recipe img {
-    height: 300px;
-}
-
-.recipe h3 {
-    font-size: 24px;
-    margin-block: 5px;
-}
-
-.recipe p {
-    font-size: 20px;
-    color: #4a4a4a;
-    margin: 5px 0;
-}
-
-.recipe span {
-    font-weight: 600;
-}
-
-.recipe button {
-    font-size: 20px;
-    font-weight: 600;
-    padding: 10px;
-    border-radius: 6px;
-    border: none;
-    cursor: pointer;
-    margin: 18px auto;
-    background-color: #f44336;
-    color: #fff;
-}
-
-/* Recipe Details */
-.recipe-details {
-    display: none;
+nav {
+    background: #54E9BD;
+    height: 80px;
+    width: 100%;
     position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    -webkit-transform: translate(-50%, -50%);
-    background-color: #d0e98b;
-    border: 4px solid #000;
-    border-radius: 12px;
-    width: 40%;
-    height: 60%;
-    font-size: 20px;
-    transition: all 0.5s ease-in-out;
-    overflow-y: scroll;
+    top: 0;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
-.recipe-details-content {
-    padding: 30px;
+nav h1 {
+    font-size: 34px;
+    line-height: 80px;
+    padding: 0 100px;
 }
 
-.recipeName {
-    text-align: center;
-    text-transform: uppercase;
-    text-decoration: underline;
+label.logo {
+    color: rgb(255, 255, 255);
+    font-size: 34px;
+    line-height: 80px;
+    padding: 0 100px;
+    font-weight: 700;
 }
 
-.ingredientList li {
-    margin-top: 10px;
-    margin-left: 20px;
+
+nav ul {
+    float: right;
+    margin-right: 20px;   
 }
 
-.recipeInstructions p {
-    line-height: 30px;
-    white-space: pre-line;
-}
-
-.recipeVid {
-    text-align: center;
-}
-
-.recipeVid a {
+nav ul li {
     display: inline-block;
-    padding: 10px 20px;
-    border: 1px solid #000;
-    background-color: #f44336;
-    color: #fff;
+    line-height: 80px;
+    margin: 0 5px;
+}
+
+nav ul li a {
+    color: rgb(255, 255, 255);
+    font-size: 17px;
+    font-weight: 700;
+    padding: 7px 13px;
+    border-radius: 3px;
+    text-transform: uppercase;
     text-decoration: none;
-    border-radius: 5px;
-    transition: transform 0.2s ease-in-out;
 }
 
-.recipeVid i {
+a.active, a:hover {
+    background: #2a9675;
+    transition: 0.5s;
+}
+
+.check-btn {
     font-size: 30px;
+    color: rgb(0, 0, 0);
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
 }
 
-.recipeVid:hover {
-    transform: scale(1.05);
+#check {
+    display: none;
 }
 
-.recipeName, .ingredientList li, .recipeInstructions {
+nav button {
+    border: none;
+    padding: 10px 12px;
+    border-radius: 20px;
+    font-size: 1.1vw;
+    font-weight: 500;
+    background: seagreen;
+    color: white;
+    cursor: pointer;
+}
+
+/* Home section styles */
+
+#home {
+    background: url(https://images.unsplash.com/photo-1514986888952-8cd320577b68?q=80&w=1476&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+    background-size: cover;
+    padding: 50px 20px;
+    text-align: center;
+    margin-top: 80px;
+    height: 100vh;
+    padding-top: 12%;
+}
+
+.home-left {
     margin-bottom: 20px;
 }
 
-.recipe-close-btn {
-    border: none;
-    font-size: 18px;
-    padding: 8px;
-    border-radius: 4px;
-    /* opacity: 0.9; */
-    background-color: #f44336;
-    /* background-color: transparent; */
-    color: #fff;
-    position: absolute;
-    top: 5px;
-    right: 5px;
-    width: 30px;
-    height: 30px;
+.home-left h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.home-left h1 span {
+    color: #3bb143; /* Green color for 'healthy' */
+}
+
+.home-left h3 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.home-right {
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: transform 0.2s ease-in-out;
+    flex-wrap: wrap;
 }
 
-.recipe-close-btn:hover {
-    transform: scale(1.05);
+.home-right .home-right-mid {
+    margin: 20px 0;
 }
 
-/* Adding Scrollbar to recipe popup
-.recipe-details::-webkit-scrollbar {
-    width: 10px;
+.home-right .home-right-mid i {
+    font-size: 2rem;
+    margin-right: 10px;
 }
 
-.recipe-details::-webkit-scrollbar-thumb {
-    background: #b5b5ba;
-    border-radius: 20px;
-    --webkit-border-radius: 16px;
-} */
-
-/* Adding Scrollbar to body
-body::-webkit-scrollbar {
-    width: 16px;
+#home button {
+    border: 3px solid seagreen;
+    padding: 10px 20px;
+    border-radius: 25px;
+    color: seagreen;
+    font-weight: 600;
+    font-size: 1rem;
 }
 
-body::-webkit-scrollbar-thumb {
-    background: #a1a1a1;
-    /* border-radius: 5px;
-    --webkit-border-radius: 5px;
+/* Services section styles */
+
+#services {
+    /* padding: 50px 20px; */
+    padding-top: 10%;
+    text-align: center;
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: space-evenly;
 }
 
-body::-webkit-scrollbar-track {
-    background: #ebebeb;
-} */
+.services1,
+.services2,
+.services3 {
+    margin-bottom: 40px;
+    height: 400px;
+    width: 300px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 12px;
+}
 
-/* Code for responsiveness */
-@media screen and (max-width:600px) {
-    header nav, header nav h1 {
-        flex-direction: column;
+.services {
+    margin-bottom: 20px;
+}
+
+.services1 {
+    background-image: url(https://images.unsplash.com/photo-1495521821757-a1efb6729352?q=80&w=1452&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+    background-size: cover;
+}
+
+.services2 {
+    background-image: url(https://images.unsplash.com/photo-1493612276216-ee3925520721?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHBsYW5uaW5nfGVufDB8fDB8fHww);
+    background-size: cover;
+}
+
+.services3 {
+    background-image: url(https://images.unsplash.com/photo-1620706857370-e1b9770e8bb1?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8bnV0cml0aW9ufGVufDB8fDB8fHww);
+    background-size: cover;
+}
+
+.services1 h1, .services2 h1, .services3 h1 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+.services1 h2, .services2 h2, .services3 h2 {
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+.services1 button, .services2 button, .services3 button {
+    padding: 10px 20px;
+    background-color: #333;
+    border-radius: 7px;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.services1 button:hover, .services2 button:hover, .services3 button:hover {
+    background-color: #555;
+}
+
+/* Reviews section styles */
+#reviews {
+    background-color: #fff;
+    padding-top: 10%;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: center;
+    height: 100vh;
+}
+
+.rev-top h1 {
+    font-size: 2.3rem;
+    margin-bottom: 10px;
+}
+
+.rev-top h3 {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+}
+
+.rev-btm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.rev-btm .div1,
+.rev-btm .div2,
+.rev-btm .div3 {
+    flex: 1;
+    margin: 0 10px;
+    border: 2px solid seagreen;
+    border-radius: 15px;
+    height: 300px;
+    padding: 20px;
+}
+
+.rev-btm img {
+    width: 100%;
+    max-width: 100px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.rev-btm h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.rev-btm p {
+    font-size: 1rem;
+}
+
+/* About Us section styles */
+#aboutus {
+    padding-top: 12%;
+    text-align: center;
+    height: 100vh;
+}
+
+.aboutus-top h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.aboutus-top h3 {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+}
+
+.aboutus-top button {
+    padding: 10px 20px;
+    background-color: #333;
+    border-radius: 10px;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.aboutus-top button:hover {
+    background-color: #555;
+}
+
+.aboutus-btm {
+    border-top: 1px solid black;
+    padding-top: 12%;
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.aboutus-btm .div1,
+.aboutus-btm .div2,
+.aboutus-btm .div3 {
+    flex: 1;
+    margin: 0 10px;
+}
+
+.aboutus-btm h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.aboutus-btm span {
+    font-size: 1rem;
+}
+
+/* Footer styles */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 15px;
+    text-align: center;
+}
+
+
+/* Nav Bar Responsive  */
+
+@media (max-width: 952px) {
+    label.logo {
+        font-size: 23px;
+        padding-left: 50px;
     }
-    header nav form {
-        width: 80;
-        margin-top: 20px;
+    
+    nav ul li a {
+        font-size: 16px;
+    }
+
+    nav ul li button {
+        font-size: 16px;
+        padding: 12px 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .check-btn {
+        display: block;
+    }
+
+    ul {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: rgb(69, 228, 69);
+        top: 80px;
+        left: -100%;
+        text-align: center;
+        transition: all 0.5s;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 50px 0;
+        line-height: 30px;
+    }
+
+    nav ul li a {
+        font-size: 20px
+    }
+
+    a:hover, a.active {
+        background: none;
+        color: white;
+    }
+
+    #check:checked ~ ul {
+        left: 0;
+    }
+}
+
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+    
+    #home {
+        padding-top: 34%;
+        height: 90vh;
+    }
+    .home-left h1 {
+        font-size: 2.4rem;
+    }
+
+    .home-left h3 {
+        font-size: 1.5rem;
+    }
+
+    .home-right .home-right-mid i {
+        font-size: 2rem;
+        color: white;
+    }
+
+    #services {
+        flex-direction: column;
+        margin-top: 20%;
+        height: 140vh;
+    }
+
+    .services h1 {
+        font-size: 1.2rem;
+    }
+
+    .services h2 {
+        font-size: 1rem;
+    }
+
+    .rev-top h1 {
+        font-size: 1.5rem;
+    }
+
+    .rev-top h3 {
+        font-size: 1rem;
+    }
+
+    .rev-btm {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    #reviews {
+        height: 160vh;
+        padding-top: 20%;
+        margin-bottom: 10px;
+    }
+
+    .rev-btm .div1,
+    .rev-btm .div2,
+    .rev-btm .div3 {
+        height: 5px;
+        padding: 5 7px;
+        width: 350px;
+    }
+
+    .rev-btm img {
+        max-width: 60px;
+    }
+
+    .rev-btm h3 {
+        font-size: 1rem;
+    }
+
+    #aboutus {
+        padding-top: 21%;
+        height: 90vh;
+    }
+    .aboutus-top h2 {
+        font-size: 1.2rem;
+    }
+
+    .aboutus-top h3 {
+        font-size: 1rem;
+    }
+
+    .aboutus-btm h3 {
+        font-size: 1rem;
+    }
+
+    .aboutus-btm span {
+        font-size: 0.9rem;
     }
 }
