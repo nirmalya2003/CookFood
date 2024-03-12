@@ -143,6 +143,7 @@ nav button {
     color: seagreen;
     font-weight: 600;
     font-size: 1rem;
+    cursor: pointer;
 }
 
 /* Services section styles */
@@ -301,7 +302,7 @@ nav button {
 
 .aboutus-btm {
     border-top: 1px solid black;
-    padding-top: 12%;
+    padding-top: 6%;
     margin-top: 30px;
     display: flex;
     justify-content: center;

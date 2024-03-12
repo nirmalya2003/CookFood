@@ -18,8 +18,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CookFood.</title>
-    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="style3.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
         integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -94,8 +94,8 @@
 
     <section id="home">
         <div class="home-left">
-            <h1>Inspiring Quotes about meal, food and <span>healthy</span> cooking.</h1>
-            <h3>Slogan of our website</h3>
+            <h1>Indulge in the art of <span>wellness</span> through delicious nourishment.</h1>
+            <h3>Revitalize Your Plate, Rejuvenate Your Health!</h3>
            <!-- <button>Get Started</button> -->
            <h2>Welcome <span><?php echo $username;?></span></h2>
            <style>
@@ -123,7 +123,7 @@
     <section id="services">
         <div class="services1">
             <h1>Curated Recipe Collection</h1>
-            <h2>Lorem ipsum fuck sit amet.</h2>
+            <h2>Crafted flavors for every palate.</h2>
             <button onclick="redirectToExplore()">Explore</button>
             <button class="favButton" onclick="redirectToFavourite()">Favourites</button>
             <script>
@@ -143,12 +143,12 @@
         </div>
         <div class="services2">
             <h1>Smart Meal Planning</h1>
-            <h2>Lorem ipsum dolor sit amet.</h2>
+            <h2>Efficient plans, delicious results.</h2>
             <button>Explore</button>
         </div>
         <div class="services3">
             <h1>Nutritional Tracker</h1>
-            <h2>Lorem ipsum dolor sit amet.</h2>
+            <h2>Stay on track, feel great!</h2>
             <button>Explore</button>
         </div>
     </section>
@@ -156,7 +156,7 @@
     <section id="reviews">
         <div class="rev-top">
             <h1>What our <span>users</span> say?</h1>
-            <h3>(Lorem ipsum dolor sit amet consectetur.)</h3>
+            <h3>(Voices of satisfaction, stories that inspire.)</h3>
         </div>
         <div class="rev-btm">
             <div class="div1">
@@ -179,8 +179,8 @@
 
     <section id="aboutus">
         <div class="aboutus-top">
-            <h2>Join Our Community</h2>
-            <h3>Lorem ipsum, dolor sit amet consectetur adipisicing.</h3>
+            <h2>Our Community</h2>
+            <h3>Connect, share, and thrive with us today!</h3>
         </div>
         <div class="aboutus-mid">
             <h2>Add your thoughts</h2>
