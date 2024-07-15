@@ -66,7 +66,6 @@ const fetchRecipes = async (query) => {
             })
             
             recipeContainer.appendChild(recipeDiv);
-
         });
     }
     catch(error) {
@@ -134,8 +133,6 @@ const favRecipe = (meal) => {
     alert(mealName + " has been added to your favourites.");
     sendMealToPHP(mealId, mealName);
 };
-
-
 
 //Adding event listner for popupclose button
 recipeCloseBtn.addEventListener('click', ()=> {

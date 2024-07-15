@@ -60,9 +60,10 @@ CREATE TABLE `login` (
 --
 
 INSERT INTO `login` (`username`, `email`, `pass`, `fullname`) VALUES
-('ayan201', 'ayankoley.op@gmail.com', '111', 'AYAN KOLEY'),
+('admin', 'admin@admin.com', 'admin', 'ADMIN'),
 ('ayan2003', 'ayankoley339@gmail.com', '111111', 'Ayan Koley'),
-('subha18', 'subhadas18@gmail.com', '1111', 'Subha Das');
+('subha18', 'subhadas18@gmail.com', '1111', 'Subha Das'),
+('raja', 'raja@demo.com', '123', 'Raja Adak');
 
 -- --------------------------------------------------------
 
@@ -140,7 +141,44 @@ ALTER TABLE `favfood`
 --
 ALTER TABLE `review`
   ADD CONSTRAINT `review_ibfk_1` FOREIGN KEY (`username`) REFERENCES `login` (`username`);
+
+
+-- --------------------------------------------------------
+-- *********** DEVELOPEMENT PHASE 2 ***********************
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `addrecipe`
+--
+CREATE TABLE `addrecipe` (
+    `idRecipe` INT AUTO_INCREMENT PRIMARY KEY,
+    `username` varchar(50) not null,
+    `strRecipe` VARCHAR(255),
+    `strInstructions` TEXT,
+    `strYoutube` VARCHAR(255),
+    `strCategory` VARCHAR(255),
+    `strArea` VARCHAR(255),
+    `strRecipeThumb` VARCHAR(255),
+    `strIngredientsMeasurements` TEXT,
+    FOREIGN key (`username`) REFERENCES login(`username`));
+
+
+
+--
+-- Table structure for table `comments`
+--
+CREATE TABLE `comments` (
+    `commentid` INT AUTO_INCREMENT PRIMARY KEY,
+    `recipeid` INT NOT NULL,
+    `username` VARCHAR(255) NOT NULL,
+    `comment` TEXT NOT NULL,
+    `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (`recipeid`) REFERENCES addrecipe(`idRecipe`));
+
+
 COMMIT;
+
+
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

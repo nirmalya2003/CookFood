@@ -19,6 +19,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CookFood.</title>
+    <link rel="icon" href="../CookFood.png" type="png">
     <link rel="stylesheet" href="style3.css">
     <link rel="stylesheet" href="style2.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
@@ -165,6 +166,7 @@
                     <option value="../expFav/expFavCategories/expFavCategories.html">By Category</option>
                     <option value="../expFav/expFavIngredients/expFavIngredients.html">By Main Ingredient</option>
                     <option value="../expFav/expFavRandom/expFavRandom.html">A Random Meal</option>
+                    <option value="../addRecipe/showUserRecipe.php">By CookFood Users</option>
                 </select>
             </form>
 
@@ -190,7 +192,17 @@
             </form>
             <style>
                 .services1 .favButton {
-                margin-top: 10px;
+                margin-top: 3px;
+                }
+            </style>
+ 
+            <form class="addRecipeButton" action="../addRecipe/addRecipe.php" >
+                <input type="hidden" name="username" value="<?php echo $username;?>" >
+                <button type="submit">Add Recipe</button>
+            </form>
+            <style>
+                .services1 .addRecipeButton {
+                margin-top: 3px;
                 }
             </style>
         </div>
@@ -215,7 +227,7 @@
         <div class="rev-btm">
             <div class="div1">
                 <?php 
-                    $q1="select username,review from review where username='subha18'";
+                    $q1="select username,review from review where username='sayan'";
                     $d=mysqli_query($c,$q1);
                     $row=mysqli_fetch_assoc($d);
                     $username=$row['username'];
@@ -239,7 +251,7 @@
             </div>
             <div class="div3">
             <?php 
-                    $q1="select username,review from review where username='subha18'";
+                    $q1="select username,review from review where review_no=4";
                     $d=mysqli_query($c,$q1);
                     $row=mysqli_fetch_assoc($d); 
                     $username=$row['username'];
@@ -267,10 +279,10 @@
         <div class="aboutus-btm">
             <div class="div1">
                 <h3>Developers</h3>
-                <span>AK</span>
                 <span>NA</span>
+                <span>SM</span>
                 <span>SD</span>
-                <span>TR</span>
+                <span>SD</span>
             </div>
             <div class="div2">
                 <h3>About Us</h3>

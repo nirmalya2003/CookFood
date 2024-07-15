@@ -142,6 +142,22 @@ form button[type="submit"]:hover, .recipe button:hover, .recipe-close-btn:hover,
     background-color: #23f14f;
 }
 
+.recipe commentButton {
+    font-size: 20px;
+    font-weight: 600;
+    padding: 10px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    margin: 18px auto;
+    background-color: #1879b9;
+    color: #fff;
+}
+
+.recipe commentButton:hover {
+    background-color: #54a6e9;
+}
+
 /* Recipe Details */
 .recipe-details {
     display: none;

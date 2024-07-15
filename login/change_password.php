@@ -78,6 +78,7 @@ $c=mysqli_connect($servername,$username,$password,$dbname);
         <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" href="../CookFood.png" type="png">
     <link rel="stylesheet" href="style2.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Change Password</title>
