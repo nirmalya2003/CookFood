@@ -1,0 +1,253 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+    background-color: #bef0d1;
+    color: #000000;
+}
+
+header nav {
+    background-color: rgb(36, 189, 102);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1;
+}
+
+header nav h1 {
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+header nav form {
+    display: flex;
+    justify-content: center;
+}
+
+form input[type="text"] {
+    flex-grow: 1;
+    margin-right: 10px;
+}
+
+form input[type="text"], button[type="submit"] {
+    border: none;
+    font-size: 18px;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+form button[type="submit"] {
+    background-color: #f44336;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+form button[type="submit"]:hover, .recipe button:hover, .recipe-close-btn:hover, .recipeVid a:hover {
+    background-color: #ff5c5c;
+}
+
+/* Main section */
+.recipe-container {
+    text-align: center;
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 40px;
+    width: 80%;
+    margin: 10px auto;
+    padding: 20px;
+    place-items: center;
+}
+
+.quote1, .quote2 {
+    text-align: center;
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 40px;
+    width: 80%;
+    margin: 10px auto;
+    padding: 30px;
+    place-items: center;
+}
+
+.recipe {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    color: #000;
+    border-radius: 6px;
+    box-shadow: 0 5px 10px rgba(214, 25, 25, 0.5), -5px -5px 10px rgba(79, 233, 32, 0.678),  -5px 5px 10px rgba(47, 166, 235, 0.5),  5px -5px 10px rgba(243, 28, 225, 0.5);
+    cursor: pointer;
+    max-width: 350px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.recipe:hover {
+    transform: scale(1.04);
+}
+
+.recipe img {
+    height: 300px;
+}
+
+.recipe h3 {
+    font-size: 24px;
+    margin-block: 5px;
+}
+
+.recipe p {
+    font-size: 20px;
+    color: #4a4a4a;
+    margin: 5px 0;
+}
+
+.recipe span {
+    font-weight: 600;
+}
+
+.recipe button {
+    font-size: 20px;
+    font-weight: 600;
+    padding: 10px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    margin: 18px auto;
+    background-color: #f44336;
+    color: #fff;
+}
+
+/* Recipe Details */
+.recipe-details {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    background-color: #d0e98b;
+    border: 4px solid #000;
+    border-radius: 12px;
+    width: 40%;
+    height: 60%;
+    font-size: 20px;
+    transition: all 0.5s ease-in-out;
+    overflow-y: scroll;
+}
+
+.recipe-details-content {
+    padding: 30px;
+}
+
+.recipeName {
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: underline;
+}
+
+.ingredientList li {
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+.recipeInstructions p {
+    line-height: 30px;
+    white-space: pre-line;
+}
+
+.recipeVid {
+    text-align: center;
+}
+
+.recipeVid a {
+    display: inline-block;
+    padding: 10px 20px;
+    border: 1px solid #000;
+    background-color: #f44336;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.recipeVid i {
+    font-size: 30px;
+}
+
+.recipeVid:hover {
+    transform: scale(1.05);
+}
+
+.recipeName, .ingredientList li, .recipeInstructions {
+    margin-bottom: 20px;
+}
+
+.recipe-close-btn {
+    border: none;
+    font-size: 18px;
+    padding: 8px;
+    border-radius: 4px;
+    /* opacity: 0.9; */
+    background-color: #f44336;
+    /* background-color: transparent; */
+    color: #fff;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.2s ease-in-out;
+}
+
+.recipe-close-btn:hover {
+    transform: scale(1.05);
+}
+
+/* Adding Scrollbar to recipe popup
+.recipe-details::-webkit-scrollbar {
+    width: 10px;
+}
+
+.recipe-details::-webkit-scrollbar-thumb {
+    background: #b5b5ba;
+    border-radius: 20px;
+    --webkit-border-radius: 16px;
+} */
+
+/* Adding Scrollbar to body
+body::-webkit-scrollbar {
+    width: 16px;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: #a1a1a1;
+    /* border-radius: 5px;
+    --webkit-border-radius: 5px;
+}
+
+body::-webkit-scrollbar-track {
+    background: #ebebeb;
+} */
+
+/* Code for responsiveness */
+@media screen and (max-width:600px) {
+    header nav, header nav h1 {
+        flex-direction: column;
+    }
+    header nav form {
+        width: 80;
+        margin-top: 20px;
+    }
+}
